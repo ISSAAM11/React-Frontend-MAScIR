@@ -32,17 +32,18 @@ const Historique = ()  => {
 
   const [modify, setModify] = useState(false);
   const [titleModal, setTitleModal] = useState(false);
-
+  const config  = {
+    headers: {
+        Authorization : 'Bearer ' +localStorage.getItem('token')
+    }
+  }
+  
   useEffect(()=> {
     getAllHotels()
   } ,[reducerValue])  
 
   const getAllHotels = async () => {
-    const config  = {
-      headers: {
-          Authorization : 'Bearer ' +localStorage.getItem('token')
-      }
-    }
+
     setLoading(true)
     axios.get(`http://localhost:3000/hotelsList/${localStorage.getItem('id')}?filter[where][isDeleted]=true`,config ).then(
         res => {

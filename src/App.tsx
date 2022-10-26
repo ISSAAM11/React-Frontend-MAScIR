@@ -3,7 +3,6 @@ import './App.css';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import { BrowserRouter, Route, Routes, } from 'react-router-dom';
-import Registerpage from './pages/Registerpage';
 import { ProtectedRoutes }  from './ProtectedRoutes'
 import ErrorPage from './pages/Error404';
 import {UserProvider} from './ContextHandler'
@@ -25,7 +24,6 @@ function App() {
 
               <Route element={<ProtectedRoutes />} >
                 <Route path="/home/*" element={<Home></Home>} />
-                <Route path="/Registerpage" element={<Registerpage />} />
               </Route>            
 
               </React.Fragment>
